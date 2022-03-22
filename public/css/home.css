@@ -1,0 +1,23 @@
+.item-center{
+    
+    text-align: center;
+}
+.boton {
+    
+    
+    padding: 0.5%; /*espacio alrededor texto*/
+    background-color: #2e518b; /*color botón*/
+    color: #ffffff; /*color texto*/
+    margin: auto;
+    text-decoration: none; /*decoración texto*/
+    text-transform: uppercase; /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 50px; /*bordes redondos*/
+    
+    }
+#delete {
+    text-align: left;
+    background-color: red;
+    
+    
+}

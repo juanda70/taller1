@@ -1,0 +1,16 @@
+Se necesita una base de datos con usuario root y sin contraseÃ±a o debe cambiarlo en el env 
+La base de datos se debe llamar taller1 y debe tener una tabla llamada pets  con los  siguientes campos
+
+id int
+name string
+dateBirth date
+gender string 
+created_at
+udated_at 
+
+o tambien solo corre el migrations
+
+en la validacion de name no valide nada porque lo tome como que cualquier cosa puede ser considerado un nombre, los demás estan validados 
+
+Me falto hacer la actividad 6 que es el boton de eliminación de objeto
+ 
