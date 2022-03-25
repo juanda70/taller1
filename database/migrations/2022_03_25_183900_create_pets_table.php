@@ -19,6 +19,8 @@ return new class extends Migration
             $table->double('weight');
             $table->date('dateBirth');
             $table->string('gender');
+            $table->unsignedBigInteger('breed_id');
+            $table->foreign('breed_id')->references('id')->on('breeds');
             $table->timestamps();
         });
     }

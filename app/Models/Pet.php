@@ -75,8 +75,24 @@ class Pet extends Model
     {
         $this->attributes['gender'] = $gender;
     }
-    public function breed()
+    public function getUpdatedAt()
     {
-        return $this->hasone(Breed::class);
+        return $this->attributes['updated_at'];
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->attributes['updated_at'] = $updatedAt;
+    }
+    public function breed(){
+        return $this->belongsTo(Breed::class);
+    }
+    public function getBreedId()
+    {
+        return $this->breed_id;
+    }
+    public function setBreedId($breed_id)
+    {
+        return $this->breed_id = $breed_id;
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pet;
-
+use App\Models\Breed;
 class PetController extends Controller
 {
     //
@@ -16,7 +16,8 @@ class PetController extends Controller
         $viewData["subtitle"] =  "List of pets";
         
         $viewData["pets"] = Pet::orderBy('id','DESC')->get();
-        
+        $viewData["breeds"] = Breed::with('pets')->get();
+
         return view('pet.index')->with("viewData", $viewData);
     }
 

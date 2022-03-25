@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Breed extends Model
+class Breedtype extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','suggestions'];
+    protected $fillable = [];
     public function getId()
     {
         return $this->attributes['id'];
@@ -17,15 +17,6 @@ class Breed extends Model
     public function setId($id)
     {
         $this->attributes['id'] = $id;
-    }
-    public function getName()
-    {
-        return $this->attributes['name'];
-    }
-
-    public function setName($name)
-    {
-        $this->attributes['name'] = $name;
     }
     public function getUpdatedAt()
     {
@@ -36,8 +27,8 @@ class Breed extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
-    public function pets(){
-        return $this->hasMany(Pet::class);
+    public function pet(){
+        return $this->belongsTo(Pet::class);
     }
     public function getPet()
     {
@@ -46,5 +37,16 @@ class Breed extends Model
     public function setPet($pet)
     {
         return $this->pet = $pet;
+    }
+    public function breed(){
+        return $this->belongsTo(Breed::class);
+    }
+    public function getBreed()
+    {
+        return $this->breed;
+    }
+    public function setBreed($breed)
+    {
+        return $this->breed = $breed;
     }
 }

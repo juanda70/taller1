@@ -17,6 +17,7 @@
         <p class="card-text">Peso: {{ $viewData["pet"]->getWeight() }}kg</p>
         <p class="card-text">Fecha de nacimiento: {{$viewData["pet"]->getDateBirth()}}</p>
         <p class="card-text">Genero:{{$viewData["pet"]->getGender()}}</p>
+        <p class="card-text">Genero:{{$viewData["breed"]}}</p>
         <a class="boton" id= "delete" href="{{route('pet.delete',['id'=> $viewData["pet"]->getId()] )}}" target="_self">Delete</a>
         
        
