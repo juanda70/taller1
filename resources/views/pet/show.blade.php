@@ -14,10 +14,10 @@
         <h5 class="card-title">
            {{ $viewData["pet"]->getName()}}
         </h5>
-        <p class="card-text">Peso: {{ $viewData["pet"]->getWeight() }}kg</p>
-        <p class="card-text">Fecha de nacimiento: {{$viewData["pet"]->getDateBirth()}}</p>
-        <p class="card-text">Genero:{{$viewData["pet"]->getGender()}}</p>
-        <p class="card-text">Genero:{{$viewData["breed"]}}</p>
+        <p class="card-text">weight: {{ $viewData["pet"]->getWeight() }}kg</p>
+        <p class="card-text">Date: {{$viewData["pet"]->getDateBirth()}}</p>
+        <p class="card-text">Gender:{{$viewData["pet"]->getGender()}}</p>
+        <p class="card-text">Breed:{{$viewData["breed"]->getName()}}</p>
         <a class="boton" id= "delete" href="{{route('pet.delete',['id'=> $viewData["pet"]->getId()] )}}" target="_self">Delete</a>
         
        

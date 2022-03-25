@@ -25,10 +25,11 @@ class PetController extends Controller
     {
         $viewData = [];
         $pet = Pet::findOrFail($id);
+        $breed = Breed::findOrFail($pet->getBreedId());
         $viewData["title"] = $pet->getName()." - Online Store";
         $viewData["subtitle"] =  $pet->getName()." - pet information";
         $viewData["pet"] = $pet;
-        
+        $viewData["breed"] = $breed;
         return view('pet.show')->with("viewData", $viewData);
     }
     public function create()
