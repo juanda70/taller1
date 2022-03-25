@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Breedpet;
+
 
 class Breed extends Model
 {
@@ -25,19 +27,20 @@ class Breed extends Model
 
     public function setBreed($breed)
     {
-        $this->attributes['breed'] = $bredd;
+        $this->attributes['breed'] = $breed;
     }
-    public function getPet()
+    public function breedpet()
     {
-        return $this->attributes['pet'];
+        return $this->belongTo(Breedpet::class);
+    }
+    public function getBreedpet()
+    {
+        return $this->attributes['breedpet'];
     }
 
-    public function setPet($pet)
+    public function setbreedpet($breedpet)
     {
-        $this->attributes['pet'] = $pet;
+        $this->attributes['breedpet'] = $breedpet;
     }
-    public function pet()
-    {
-        return $this->belongsTo(Pet::class);
-    }
+    
 }

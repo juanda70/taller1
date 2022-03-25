@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Breedpet;
 
 class Pet extends Model
 {
@@ -75,8 +76,19 @@ class Pet extends Model
     {
         $this->attributes['gender'] = $gender;
     }
-    public function breed()
+    
+    public function breedpet()
     {
-        return $this->hasone(Breed::class);
+        return $this->hasOne(Breedpet::class);
+    }
+
+    public function getBreedpet()
+    {
+        return $this->breedpet;
+    }
+
+    public function setBreedpet($breedpet)
+    {
+        $this->breedpet = $breedpet;
     }
 }
