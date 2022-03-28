@@ -22,17 +22,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="{{route('home.index')}}">Home</a>
-                    <a class="nav-link active" href="{{ route('product.index') }}">Products</a>
+                    <a class="nav-link active" href="{{route('home.index')}}">@lang("Home")</a>
+                    <a class="nav-link active" href="{{ route('product.index') }}">{{ __('Products')}}</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
-                    <a class="nav-link active" href="{{ route('login') }}">Login</a>
-                    <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link active" href="{{ route('login') }}">@lang('Login')</a>
+                    <a class="nav-link active" href="{{ route('register') }}">{{ __('Register')}}</a>
                     @else
-                    <a class="nav-link active" href="{{ route('myaccount.orders') }}">My Orders</a>
+                    <a class="nav-link active" href="{{ route('myaccount.orders') }}">{{ __('My Orders')}}</a>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active"
-                            onclick="document.getElementById('logout').submit();">Logout</a>
+                            onclick="document.getElementById('logout').submit();">{{ __('Logout')}}</a>
                         @csrf
                     </form>
                     @endguest

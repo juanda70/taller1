@@ -19,7 +19,7 @@
         <p class="card-text">Gender:{{$viewData["pet"]->getGender()}}</p>
         <p class="card-text">Breed:{{$viewData["breed"]->getName()}}</p>
         <a class="boton" id= "delete" href="{{route('pet.delete',['id'=> $viewData["pet"]->getId()] )}}" target="_self">Delete</a>
-        
+        <a class="boton" id= "edit" href="{{route('pet.edit',['id'=> $viewData["pet"]->getId()] )}}" target="_self">Edit</a>
        
       </div>
       

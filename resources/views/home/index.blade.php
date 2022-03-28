@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="{{ asset('/css/home.css') }}" rel="stylesheet" />
 </head>
+<h1>@lang('Home')</h1>
 <div class="row">
   <div class="col-md-6 col-lg-4 mb-2">
     <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">

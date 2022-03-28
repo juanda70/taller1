@@ -43,16 +43,39 @@ class PetController extends Controller
     public function save(Request $request)
     {
         Pet::validate($request);
-        print($request);
         Pet::create($request->only(["name","weight","dateBirth","gender","breed_id"]));
 
-        return back()->with("msg",'Elemento creado satisfactoriamente');
+        return back()->with("msg",__('message.Item created Successfully'));
 
     }
     public function destroy($id)
     {
         Pet::destroy($id);
         return view('pet.delete');
+    }
+    public function edit($id)
+    {
+        $viewData = [];
+        $pet = Pet::findOrFail($id);
+        $breed = Breed::findOrFail($pet->getBreedId());
+        $viewData["title"] = $pet->getName()." - Online Store";
+        $viewData["subtitle"] =  $pet->getName()." - pet information";
+        $viewData["pet"] = $pet;
+        $viewData["breeds"] = Breed::with('pets')->get();
+        return view('pet.edit')->with("viewData", $viewData);
+    }
+    public function update(Request $request,$id)
+    {
+        Pet::validate($request);
+        $pet = Pet::findOrFail($id);
+        $pet->setName($request->name);
+        $pet->setWeight($request->weight);
+        $pet->setDateBirth($request->dateBirth);
+        $pet->setGender($request->gender);
+        $pet->setBreedId($request->breed_id);
+        $pet->save();
+        return back()->with("msg", __('message.Item Updated Successfully'));
+
     }
 }
 
