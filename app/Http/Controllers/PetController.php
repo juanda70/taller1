@@ -36,14 +36,15 @@ class PetController extends Controller
     {
         $viewData = []; //to be sent to the view
         $viewData["title"] = "Create pet";
-
+        $viewData["breeds"] = Breed::all();
         return view('pet.create')->with("viewData",$viewData);
     }
 
     public function save(Request $request)
     {
         Pet::validate($request);
-        Pet::create($request->only(["name","weight","dateBirth","gender"]));
+        print($request);
+        Pet::create($request->only(["name","weight","dateBirth","gender","breed_id"]));
 
         return back()->with("msg",'Elemento creado satisfactoriamente');
 

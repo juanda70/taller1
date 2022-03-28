@@ -26,6 +26,13 @@
               <input type="text" class="form-control mb-2" placeholder="Enter weight" name="weight" value="{{ old('weight') }}" />
               <input type="text" class="form-control mb-2" placeholder="Enter dateBirth" name="dateBirth" value="{{ old('dateBirth') }}" />
               <input type="text" class="form-control mb-2" placeholder="Enter gender" name="gender" value="{{ old('gender') }}" />
+              <select name="breed_id" class="form-control mb-2">
+                @foreach ($viewData["breeds"] as $breed)
+                  <option value="{{ $breed->getId() }}">
+                    {{ $breed->getName() }}
+                  </option>
+                @endforeach
+              </select>
               <input type="submit" class="btn btn-primary" value="Send" />
             </form>
             

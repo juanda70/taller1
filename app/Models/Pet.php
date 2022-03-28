@@ -17,7 +17,7 @@ class Pet extends Model
      * $this->attributes['gender'] - double - contains the pet gender
     */
 
-    protected $fillable = ['name','weight','dateBirth','gender'];
+    protected $fillable = ['name','weight','dateBirth','gender','breed_id'];
 
 
     public static function validate($request){
@@ -25,7 +25,8 @@ class Pet extends Model
             'name' => 'required',
             "weight" => "required|regex:/^\d+(\.\d{1,2})?$/",
             "dateBirth" => "required|date|",
-            "gender" => "required|in:masculino,femenino"
+            "gender" => "required|in:masculino,femenino",
+            "breed_id" => "required|numeric"
         ]);
     }
     public function getId()
