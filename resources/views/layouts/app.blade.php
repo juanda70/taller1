@@ -29,6 +29,8 @@
                     <a class="nav-link active" href="{{ route('login') }}">@lang('Login')</a>
                     <a class="nav-link active" href="{{ route('register') }}">{{ __('Register')}}</a>
                     @else
+                    <a class="nav-link active" href="{{ route('pet.index') }}">{{ __('Pets')}}</a>
+                    <a class="nav-link active" href="{{ route('pet.create') }}">{{ __('Create pet')}}</a>
                     <a class="nav-link active" href="{{ route('myaccount.orders') }}">{{ __('My Orders')}}</a>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active"

@@ -96,4 +96,12 @@ class Pet extends Model
     {
         return $this->breed_id = $breed_id;
     }
+    public function getUserId()
+    {
+        return $this->breed_id;
+    }
+    public function setUserId($user_id)
+    {
+        return $this->user_id = $user_id;
+    }
 }

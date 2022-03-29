@@ -20,7 +20,13 @@ return new class extends Migration
             $table->date('dateBirth');
             $table->string('gender');
             $table->unsignedBigInteger('breed_id');
-            $table->foreign('breed_id')->references('id')->on('breeds');
+            $table->foreign('breed_id')->references('id')->on('breeds')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

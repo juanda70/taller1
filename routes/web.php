@@ -25,15 +25,16 @@ Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')->name("cart.purchase");
     Route::get('/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')->name("myaccount.orders");
+    Route::get('/pets', 'App\Http\Controllers\PetController@index')->name("pet.index");
+    Route::get('/pets/create', 'App\Http\Controllers\PetController@create')->name("pet.create");
+    Route::post('/pets/save', 'App\Http\Controllers\PetController@save')->name("pet.save");
+    Route::get('/pets/edit/{id}', 'App\Http\Controllers\PetController@edit')->name("pet.edit");
+    Route::post('/pets/update/{id}', 'App\Http\Controllers\PetController@update')->name("pet.update");
+    Route::get('/pets/show/{id}', 'App\Http\Controllers\PetController@show')->name("pet.show");
+    Route::get('/pets/delete/{id}', 'App\Http\Controllers\PetController@destroy')->name("pet.delete");
 });
 
-Route::get('/pets', 'App\Http\Controllers\PetController@index')->name("pet.index");
-Route::get('/pets/create', 'App\Http\Controllers\PetController@create')->name("pet.create");
-Route::post('/pets/save', 'App\Http\Controllers\PetController@save')->name("pet.save");
-Route::get('/pets/edit/{id}', 'App\Http\Controllers\PetController@edit')->name("pet.edit");
-Route::post('/pets/update/{id}', 'App\Http\Controllers\PetController@update')->name("pet.update");
-Route::get('/pets/show/{id}', 'App\Http\Controllers\PetController@show')->name("pet.show");
-Route::get('/pets/delete/{id}', 'App\Http\Controllers\PetController@destroy')->name("pet.delete");
+
 Auth::routes();
 
 Route::middleware('admin')->group(function () {
