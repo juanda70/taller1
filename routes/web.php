@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\WishlistController;
-use App\Models\Wishlist;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name("product.show");
 
-Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index")->middleware('auth');
-Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("cart.delete")->middleware('auth');
-Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add")->middleware('auth');
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
+Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("cart.delete");
+Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')->name("cart.purchase");
@@ -34,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/pets/update/{id}', 'App\Http\Controllers\PetController@update')->name("pet.update");
     Route::get('/pets/show/{id}', 'App\Http\Controllers\PetController@show')->name("pet.show");
     Route::get('/pets/delete/{id}', 'App\Http\Controllers\PetController@destroy')->name("pet.delete");
-    Route::get('wishlist', [App\Http\Controllers\WishlistController::class, 'index'])->name('wishlist.index');
+    Route::get('/whislist', 'App\Http\Controllers\WhislistController@index')->name("whislist.index");
 });
 
 
@@ -53,3 +51,6 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/products/{id}/edit', 'App\Http\Controllers\Admin\AdminProductController@edit')->name("admin.product.edit");
     Route::put('/admin/products/{id}/update', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
 });
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -118,5 +118,23 @@ class Product extends Model
     public function setItems($items){
         $this->items = $items;
     }
+    public function ProductWhisList(){
+        return $this->hasMany(Productwhislist::class);
+    }
+
+    public function getProductWhisList(){
+        return $this->productWhisList;
+    }
+
+    public function setProductWhisList($productWhisList){
+        $this->productWhisList = $productWhisList;
+    }
+    public function getProductWhisListId(){
+        return $this->productWhisList_id;
+    }
+
+    public function setProductWhisListId($productWhisList){
+        $this->productWhisList_id = $productWhisList;
+    }
 
 }
