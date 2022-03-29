@@ -13,8 +13,10 @@ class Pet extends Model
      * $this->attributes['id'] - int - contains the pet primary key (id)
      * $this->attributes['name'] - string - contains the pet name
      * $this->attributes['weight'] - double - contains the pet weight
-     * $this->attributes['dateBirth'] - double - contains the pet date birth
-     * $this->attributes['gender'] - double - contains the pet gender
+     * $this->attributes['dateBirth'] - date - contains the pet date birth
+     * $this->attributes['gender'] - String - contains the pet gender
+     * $this->attributes['breed_id'] - Int - contains the breed_id'
+     * $this->attributes['user_id'] - Int - contains the user_id
     */
 
     protected $fillable = ['name','weight','dateBirth','gender','breed_id'];
@@ -25,7 +27,7 @@ class Pet extends Model
             'name' => 'required',
             "weight" => "required|regex:/^\d+(\.\d{1,2})?$/",
             "dateBirth" => "required|date|",
-            "gender" => "required|in:masculino,femenino",
+            "gender" => "required|in:Masculino,Femenino",
             "breed_id" => "required|numeric"
         ]);
     }

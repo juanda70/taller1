@@ -22,19 +22,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="{{route('home.index')}}">@lang("Home")</a>
-                    <a class="nav-link active" href="{{ route('product.index') }}">{{ __('Products')}}</a>
+                    <a class="nav-link active" href="{{route('home.index')}}">{{ __('message.Home')}}</a>
+                    <a class="nav-link active" href="{{ route('product.index') }}">{{ __('message.Products')}}</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
-                    <a class="nav-link active" href="{{ route('login') }}">@lang('Login')</a>
-                    <a class="nav-link active" href="{{ route('register') }}">{{ __('Register')}}</a>
+                    <a class="nav-link active" href="{{ route('login') }}">{{ __('message.Login')}}</a>
+                    <a class="nav-link active" href="{{ route('register') }}">{{ __('message.Register')}}</a>
                     @else
-                    <a class="nav-link active" href="{{ route('pet.index') }}">{{ __('Pets')}}</a>
-                    <a class="nav-link active" href="{{ route('pet.create') }}">{{ __('Create pet')}}</a>
-                    <a class="nav-link active" href="{{ route('myaccount.orders') }}">{{ __('My Orders')}}</a>
+                    <a class="nav-link active" href="{{ route('pet.index') }}">{{ __('message.Pets')}}</a>
+                    <a class="nav-link active" href="{{ route('pet.create') }}">{{ __('message.Create pet')}}</a>
+                    <a class="nav-link active" href="{{ route('myaccount.orders') }}">{{ __('message.My Orders')}}</a>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active"
-                            onclick="document.getElementById('logout').submit();">{{ __('Logout')}}</a>
+                            onclick="document.getElementById('logout').submit();">{{ __('message.Logout')}}</a>
                         @csrf
                     </form>
                     @endguest

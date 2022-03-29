@@ -10,7 +10,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">Create pet</div>
+        <div class="card-header">{{ __('message.Create pet')}}</div>
           <div class="card-body">
             @if($errors->any())
             <ul id="errors" class="alert alert-danger list-unstyled">
@@ -22,10 +22,13 @@
 
             <form method="POST" action="{{ route('pet.save') }}">
               @csrf
-              <input type="text" class="form-control mb-2" placeholder="Enter name" name="name" value="{{ old('name') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter weight" name="weight" value="{{ old('weight') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter dateBirth" name="dateBirth" value="{{ old('dateBirth') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter gender" name="gender" value="{{ old('gender') }}" />
+              <input type="text" class="form-control mb-2" placeholder="{{ __('message.Enter name')}}" name="name" value="{{ old('name') }}" />
+              <input type="text" class="form-control mb-2" placeholder="{{ __('message.Enter weight')}}" name="weight" value="{{ old('weight') }}" />
+              <input type="date" class="form-control mb-2" placeholder="{{ __('message.Enter dateBirth')}}" name="dateBirth" value="{{ old('dateBirth') }}" />
+              <select name="gender"class="form-control mb-2">
+                <option value="Masculino"> {{__('message.Male')}}</option> 
+                <option value="Femenino"> {{__('message.Femenine')}}</option> 
+              </select>
               <select name="breed_id" class="form-control mb-2">
                 @foreach ($viewData["breeds"] as $breed)
                   <option value="{{ $breed->getId() }}">
