@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/pets/update/{id}', 'App\Http\Controllers\PetController@update')->name("pet.update");
     Route::get('/pets/show/{id}', 'App\Http\Controllers\PetController@show')->name("pet.show");
     Route::get('/pets/delete/{id}', 'App\Http\Controllers\PetController@destroy')->name("pet.delete");
+    Route::get('/whislist', 'App\Http\Controllers\WhislistController@index')->name("whislist.index");
 });
 
 

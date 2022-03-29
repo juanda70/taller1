@@ -177,4 +177,27 @@ class User extends Authenticatable
     public function setOrders($orders){
         $this->orders = $orders;
     }
+    public function pets(){
+        return $this->hasMany(Pet::class);
+    }
+    public function getPet()
+    {
+        return $this->pet;
+    }
+    public function setPet($pet)
+    {
+        return $this->pet = $pet;
+    }
+    public function whisList(){
+        return $this->hasOne(Whislist::class);
+    }
+    public function getwhisList()
+    {
+        return $this->pet;
+    }
+    public function setwhisList($whisList)
+    {
+        return $this->whisList = $whisList;
+    }
+
 }
