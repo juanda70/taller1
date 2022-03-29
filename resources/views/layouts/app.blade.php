@@ -22,8 +22,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="{{route('home.index')}}">{{ __('message.Home')}}</a>
-                    <a class="nav-link active" href="{{ route('product.index') }}">{{ __('message.Products')}}</a>
+                    <a class="nav-link active" href="{{route('home.index')}}">@lang('Home')</a>
+                    <a class="nav-link active" href="{{ route('product.index') }}"> @lang('Products')</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
                     <a class="nav-link active" href="{{ route('login') }}">{{ __('message.Login')}}</a>

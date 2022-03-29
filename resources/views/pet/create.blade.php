@@ -22,7 +22,7 @@
 
             <form method="POST" action="{{ route('pet.save') }}">
               @csrf
-              <input type="text" class="form-control mb-2" placeholder="{{ __('message.Enter name')}}" name="name" value="{{ old('name') }}" />
+              <input type="text" class="form-control mb-2" placeholder="@lang('Enter name')" name="name" value="{{ old('name') }}" />
               <input type="text" class="form-control mb-2" placeholder="{{ __('message.Enter weight')}}" name="weight" value="{{ old('weight') }}" />
               <input type="date" class="form-control mb-2" placeholder="{{ __('message.Enter dateBirth')}}" name="dateBirth" value="{{ old('dateBirth') }}" />
               <select name="gender"class="form-control mb-2">
