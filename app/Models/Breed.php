@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Breed extends Model
 {
     use HasFactory;
-    protected $fillable = ['breed','suggestions'];
+    protected $fillable = ['name','suggestions'];
     public function getId()
     {
         return $this->attributes['id'];
@@ -18,26 +18,33 @@ class Breed extends Model
     {
         $this->attributes['id'] = $id;
     }
-    public function getBreed()
+    public function getName()
     {
-        return $this->attributes['breed'];
+        return $this->attributes['name'];
     }
 
-    public function setBreed($breed)
+    public function setName($name)
     {
-        $this->attributes['breed'] = $bredd;
+        $this->attributes['name'] = $name;
+    }
+    public function getUpdatedAt()
+    {
+        return $this->attributes['updated_at'];
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->attributes['updated_at'] = $updatedAt;
+    }
+    public function pets(){
+        return $this->hasMany(Pet::class);
     }
     public function getPet()
     {
-        return $this->attributes['pet'];
+        return $this->pet;
     }
-
     public function setPet($pet)
     {
-        $this->attributes['pet'] = $pet;
-    }
-    public function pet()
-    {
-        return $this->belongsTo(Pet::class);
+        return $this->pet = $pet;
     }
 }

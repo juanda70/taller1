@@ -7,8 +7,15 @@
 <link href="{{ asset('/css/home.css') }}" rel="stylesheet" />
 </head>
 
-<div class="item-center">
-    <a class="boton" href="{{route('pet.create')}}" target="_self">Create</a>
-    <a class="boton" href="{{route('pet.index')}}" target="_self">Pet List</a>
+<div class="row">
+  <div class="col-md-6 col-lg-4 mb-2">
+    <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">
+  </div>
+  <div class="col-md-6 col-lg-4 mb-2">
+    <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">
+  </div>
+  <div class="col-md-6 col-lg-4 mb-2">
+    <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">
+  </div>
 </div>
 @endsection

@@ -13,11 +13,13 @@ class Pet extends Model
      * $this->attributes['id'] - int - contains the pet primary key (id)
      * $this->attributes['name'] - string - contains the pet name
      * $this->attributes['weight'] - double - contains the pet weight
-     * $this->attributes['dateBirth'] - double - contains the pet date birth
-     * $this->attributes['gender'] - double - contains the pet gender
+     * $this->attributes['dateBirth'] - date - contains the pet date birth
+     * $this->attributes['gender'] - String - contains the pet gender
+     * $this->attributes['breed_id'] - Int - contains the breed_id'
+     * $this->attributes['user_id'] - Int - contains the user_id
     */
 
-    protected $fillable = ['name','weight','dateBirth','gender'];
+    protected $fillable = ['name','weight','dateBirth','gender','breed_id'];
 
 
     public static function validate($request){
@@ -25,7 +27,8 @@ class Pet extends Model
             'name' => 'required',
             "weight" => "required|regex:/^\d+(\.\d{1,2})?$/",
             "dateBirth" => "required|date|",
-            "gender" => "required|in:masculino,femenino"
+            "gender" => "required|in:Masculino,Femenino",
+            "breed_id" => "required|numeric"
         ]);
     }
     public function getId()
@@ -75,8 +78,32 @@ class Pet extends Model
     {
         $this->attributes['gender'] = $gender;
     }
-    public function breed()
+    public function getUpdatedAt()
     {
-        return $this->hasone(Breed::class);
+        return $this->attributes['updated_at'];
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->attributes['updated_at'] = $updatedAt;
+    }
+    public function breed(){
+        return $this->belongsTo(Breed::class);
+    }
+    public function getBreedId()
+    {
+        return $this->breed_id;
+    }
+    public function setBreedId($breed_id)
+    {
+        return $this->breed_id = $breed_id;
+    }
+    public function getUserId()
+    {
+        return $this->breed_id;
+    }
+    public function setUserId($user_id)
+    {
+        return $this->user_id = $user_id;
     }
 }
