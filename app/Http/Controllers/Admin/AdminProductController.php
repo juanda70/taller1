@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class AdminProductController extends Controller
 {
@@ -23,12 +24,25 @@ class AdminProductController extends Controller
 
         $newProduct = new Product();
         $newProduct->setName($request->input('name'));
+        $newProduct->setMaker($request->input('maker'));
         $newProduct->setDescription($request->input('description'));
         $newProduct->setPrice($request->input('price'));
-        $newProduct->setImage("game.png");
-        $newProduct->save();
 
         if ($request->hasFile('image')) {
+            /**$imageName = $product->getId().".".$request->file('image')->extension();
+            Storage::disk('public')->put(
+                $imageName,
+                file_get_contents($request->file('image')->getRealPath())
+            );
+            $product->setImage($imageName); */
+            $file = $request->file('image');
+            $nameImage = time().$file->getClientOriginalName();
+            $file->move(public_path().'/img/',$nameImage);
+            $newProduct->setImage($nameImage);
+        } 
+        $newProduct->save();
+
+        /**if ($request->hasFile('image')) {
             $imageName = $newProduct->getId().".".$request->file('image')->extension();
             Storage::disk('public')->put(
                 $imageName,
@@ -36,7 +50,7 @@ class AdminProductController extends Controller
             );
             $newProduct->setImage($imageName);
             $newProduct->save();
-        }
+        } */
 
         return back();
     }
@@ -61,17 +75,22 @@ class AdminProductController extends Controller
 
         $product = Product::findOrFail($id);
         $product->setName($request->input('name'));
+        $product->setMaker($request->input('maker'));
         $product->setDescription($request->input('description'));
         $product->setPrice($request->input('price'));
 
         if ($request->hasFile('image')) {
-            $imageName = $product->getId().".".$request->file('image')->extension();
+            /**$imageName = $product->getId().".".$request->file('image')->extension();
             Storage::disk('public')->put(
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
             );
-            $product->setImage($imageName);
-        }
+            $product->setImage($imageName); */
+            $file = $request->file('image');
+            $nameImage = time().$file->getClientOriginalName();
+            $file->move(public_path().'/img/',$nameImage);
+            $product->setImage($nameImage);
+        } 
 
         $product->save();
         return redirect()->route('admin.product.index');

@@ -17,6 +17,9 @@ class Product extends Model
      * $this->attributes['created_at'] - timestamp - contains the product creation date
      * $this->attributes['updated_at'] - timestamp - contains the product update date
      * $this->items - Item[] - contains the associated items
+     * 
+     * 
+     * $this->attributes['maker'] - string - contains the product maker
      */
     use HasFactory;
 
@@ -25,6 +28,7 @@ class Product extends Model
         $request->validate([
             "name" => "required|max:255",
             "description" => "required",
+            "maker" => "required",
             "price" => "required|numeric|gt:0",
             'image' => 'image',
         ]);
@@ -53,6 +57,14 @@ class Product extends Model
 
     public function setName($name){
         $this->attributes['name'] = $name;
+    }
+    
+    public function getMaker(){
+        return $this->attributes['maker'];
+    }
+
+    public function setMaker($maker){
+        $this->attributes['maker'] = $maker;
     }
 
     public function getDescription(){

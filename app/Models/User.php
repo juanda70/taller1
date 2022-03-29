@@ -26,6 +26,9 @@ class User extends Authenticatable
      * $this->attributes['created_at'] - timestamp - contains the user creation date
      * $this->attributes['updated_at'] - timestamp - contains the user update date
      * $this->orders - Order[] - contains the associated orders
+     * $this->attributes['lastname'] - string - contains the user lastname
+     * $this->attributes['birthday'] - date - contains the user birthday
+     * $this->attributes['gender'] - string - contains the user gender
      */
 
     /**
@@ -35,6 +38,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastname',
+        'birthday',
+        'gender',
         'email',
         'password',
         'balance',
@@ -62,6 +68,9 @@ class User extends Authenticatable
     public static function validate($request){
         $request->validate([
             'name' => 'required',
+            'lastname' => 'required',
+            'birthday' => 'required',
+            'gender' => 'required',
             "email" => "required",
             "role" => "required",
 
@@ -82,6 +91,31 @@ class User extends Authenticatable
 
     public function setName($name){
         $this->attributes['name'] = $name;
+    }
+
+
+    public function getLastname(){
+        return $this->attributes['lastname'];
+    }
+
+    public function setLastName($lastname){
+        $this->attributes['lastname'] = $lastname;
+    }
+
+    public function getBirthday(){
+        return $this->attributes['birthday'];
+    }
+
+    public function setBirthday($birthday){
+        $this->attributes['birthday'] = $birthday;
+    }
+
+    public function getGender(){
+        return $this->attributes['gender'];
+    }
+
+    public function setGender($gender){
+        $this->attributes['gender'] = $gender;
     }
 
     public function getEmail(){

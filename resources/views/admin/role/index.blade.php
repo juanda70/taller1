@@ -3,7 +3,7 @@
 @section('content')
 <div class="card mb-4">
     <div class="card-header">
-        Admin Panel - Role Edit Seccion
+        Admin Panel - User Edit Seccion
     </div>
     <div class="card-body">
         @if($errors->any())
@@ -18,7 +18,7 @@
 
 <div class="card">
     <div class="card-header">
-        Manage Roles
+        Manage Users
     </div>
     <div class="card-body">
         <table class="table table-bordered table-striped">
