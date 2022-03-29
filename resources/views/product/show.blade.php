@@ -2,6 +2,27 @@
 @section('title', $viewData["title"])
 @section('subtitle', $viewData["subtitle"])
 @section('content')
+<style>
+   .product-wish{
+       position: absolute;
+       top: 12%;
+       left: 0;
+       z-index: 99;
+       right: 52%;
+       text-align: right;
+       padding-top: 0;
+    }
+    .product-wish .fa{
+        color:#cbcbcb;
+        font-size: 32px;
+    }
+    .product-wish .fa:hover{
+       color:#ff7007;
+    }
+    .fill-heart{
+        color:#ff7007 !important;
+    }
+</style>
 <div class="card mb-3">
     <div class="row g-0">
         <div class="col-md-4">
@@ -27,11 +48,23 @@
                         <div class="col-auto">
                             <button class="btn bg-primary text-white" type="submit">Add to cart</button>
                         </div>
+
                     </div>
                 </form>
+                <div>&nbsp;</div>
+                @auth
+                <div class="product-wish">
+                       <a href="#"><i class="fa fa-heart"></i></a>
+
+
+                </div>
+                @endauth
                 </p>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+
+

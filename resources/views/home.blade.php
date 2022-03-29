@@ -1,30 +1,22 @@
 @extends('layouts.app')
-
+@section('title', 'Home Page - Online Store')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <h2>Products</h2>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="{{ asset('/css/home.css') }}" rel="stylesheet" />
+</head>
 
-        <div class="row">
-
-            @foreach ($allProducts as $product)
-
-         <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="{{asset('cuido1.jpg')}}" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">{{$product->name}}</h4>
-                    <p class="card-text">{{$product->desc}}</p>
-                </div>
-                <div class="card-body">
-                    <a href="{{ route('cart.add', $product->id)}}" class="card-link">Add to card</a>
-                </div>
-            </div>
-         </div>
-            @endforeach
-
-        </div>
-    </div>
+<div class="row">
+  <div class="col-md-6 col-lg-4 mb-2">
+    <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">
+  </div>
+  <div class="col-md-6 col-lg-4 mb-2">
+    <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">
+  </div>
+  <div class="col-md-6 col-lg-4 mb-2">
+    <img src="{{ asset('/img/Cat1.jpg') }}" class="img-fluid rounded">
+  </div>
 </div>
 @endsection
 

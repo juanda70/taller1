@@ -39,7 +39,7 @@ class AdminProductController extends Controller
             $nameImage = time().$file->getClientOriginalName();
             $file->move(public_path().'/img/',$nameImage);
             $newProduct->setImage($nameImage);
-        } 
+        }
         $newProduct->save();
 
         /**if ($request->hasFile('image')) {
@@ -90,7 +90,7 @@ class AdminProductController extends Controller
             $nameImage = time().$file->getClientOriginalName();
             $file->move(public_path().'/img/',$nameImage);
             $product->setImage($nameImage);
-        } 
+        }
 
         $product->save();
         return redirect()->route('admin.product.index');
