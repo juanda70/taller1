@@ -11,7 +11,6 @@
     <div class="card">
       <img src="{{ asset('/img/pet.jpg') }}">
       <div class="card-body text-center">
-        
       <a 
         class="btn bg-primary text-white">{{ $product->getName()}}</a>
         <br>{{__('message.Gender')}}: {{ $product->getPrice()}} </br>

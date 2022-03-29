@@ -17,19 +17,17 @@ class WhislistController extends Controller
         $idProducts = array();
         $idUser = auth()->id();
         $idWhislist = Whislist::findOrFail($idUser);
-        $Productwhislist = Productwhislist::findMany($idWhislist->getId());
-        
+        $Productwhislist = Productwhislist::where('whislist_id', $idWhislist->getId())->get();
         foreach ($Productwhislist as $whislist)
         {
             $idProducts[$cont] = $whislist->getProductId();
-            $cont = $cont+1;
+           
         }
         $viewData = [];
         $viewData["title"] = "whislist - Online Store";
         $viewData["subtitle"] =  "List of whislist";
         $viewData["whislists"] = Product::findMany($idProducts);
         
-
         return view('whislist.index')->with("viewData", $viewData);
     }
 
