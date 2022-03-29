@@ -1,17 +1,24 @@
 @extends('layouts.app')
+@section('title', $viewData["title"])
+@section('subtitle', $viewData["subtitle"])
 @section('content')
+<div class="row">
 
-<h1>your wish list</h1>
+  @foreach ($viewData["wishlists"] as $product)
 
-<div class="container my-5">
-    <div class= "card shadow">
-        <div class="card-body">
-           @If($wishlist->count() > 0)
 
-           @else
-               <h4>There are not products in your Wishlist</h4>
-           @endif
-        </div>
+    <div class="col-md-4 col-lg-3 mb-2">
+    <div class="card">
+      <img src="{{ asset('/img/pet.jpg') }}">
+      <div class="card-body text-center">
+      <a
+        class="btn bg-primary text-white">{{ $product->getName()}}</a>
+        <br>{{__('message.Gender')}}: {{ $product->getPrice()}} </br>
+
+      </div>
     </div>
+  </div>
+
+  @endforeach
 </div>
 @endsection

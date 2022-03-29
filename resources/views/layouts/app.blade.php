@@ -50,11 +50,13 @@
                     <a class="nav-link active" href="{{ route('pet.index') }}">{{ __('message.Pets')}}</a>
                     <a class="nav-link active" href="{{ route('pet.create') }}">{{ __('message.Create pet')}}</a>
                     <a class="nav-link active" href="{{ route('myaccount.orders') }}">{{ __('message.My Orders')}}</a>
+                    @auth
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('wishlist.index') }}">
                             Wishlist
                         </a>
                     </li>
+                    @endauth
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active"
                             onclick="document.getElementById('logout').submit();">{{ __('message.Logout')}}</a>
