@@ -61,9 +61,16 @@
                 </div>
             </div>
             <div class="mb-3">
+                <label class="form-label">@lang('Categoty')</label>
+                <textarea class="form-control" name="categoty" rows="3">{{ old('categoty') }}</textarea>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">@lang('Description')</label>
-                <textarea class="form-control" name="description"
-                    rows="3">{{ $viewData['product']->getDescription() }}</textarea>
+                <textarea class="form-control" name="description" rows="3">{{ old('description') }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">@lang('QuantifyAvailable')</label>
+                <textarea class="form-control" name="quantifyAvailable" rows="3">{{ old('quantifyAvailable') }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">@lang('Edit')</button>
         </form>

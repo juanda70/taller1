@@ -37,3 +37,40 @@ img {
         height: 300px;
         width: 300px;
     }
+    .product-wish{
+
+        position: absolute;
+ 
+        top: 80%;
+ 
+        left: 0;
+ 
+        z-index: 99;
+ 
+        right: 90%;
+ 
+        text-align: right;
+ 
+        padding-top: 0;
+ 
+     }
+ 
+     .product-wish .fa{
+ 
+         color:#cbcbcb;
+ 
+         font-size: 32px;
+ 
+     }
+ 
+     .product-wish .fa:hover{
+ 
+        color:#ff7007;
+ 
+     }
+ 
+     .fill-heart{
+ 
+         color:#ff7007 !important;
+ 
+     }

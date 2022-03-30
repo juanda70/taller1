@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/pets/show/{id}', 'App\Http\Controllers\PetController@show')->name("pet.show");
     Route::get('/pets/delete/{id}', 'App\Http\Controllers\PetController@destroy')->name("pet.delete");
     Route::get('/wishlist', 'App\Http\Controllers\WishListController@index')->name("wishlist.index");
+    Route::get('/wishlist/save/{id}', 'App\Http\Controllers\WishListController@save')->name("wishlist.save");
     Route::get('/wishlist/delete/{id}', 'App\Http\Controllers\WishListController@destroy')->name("wishlist.delete");
 });
 

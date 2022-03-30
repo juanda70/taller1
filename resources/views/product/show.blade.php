@@ -29,6 +29,15 @@
                         </div>
                     </div>
                 </form>
+                @auth
+
+                       <a href="{{ route('wishlist.save', ['id'=> $viewData['product']->getId()]) }}"class="btn bg-primary text-white">@lang("Add")
+                       </a>
+
+
+                
+
+                @endauth
                 </p>
             </div>
         </div>

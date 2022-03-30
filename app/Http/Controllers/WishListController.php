@@ -39,15 +39,15 @@ class WishListController extends Controller
         return back()->with("msg",Lang::get('Wishlist created Successfully'));
 
     }
-    public function save(Request $request)
+    public function save($id)
     {
         $idUser = auth()->id();
         $idWishlist = Wishlist::findOrFail($idUser);
         $productWishList = new Productwishlist();
         $productWishList->setWishListId($idUser);
-        $productWishList->setProductId($request->product_id);
+        $productWishList->setProductId($id);
         $productWishList->save();
-        return back()->with("msg", Lang::get('Product added to wish list Successfully'));
+        return view('wishlist.save');
 
     }
     public function destroy($id)

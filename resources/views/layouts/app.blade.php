@@ -31,6 +31,7 @@
                     @else
                     <a class="nav-link active" href="{{ route('pet.index') }}"> @lang('Pets')</a>
                     <a class="nav-link active" href="{{ route('pet.create') }}"> @lang('Create pet')</a>
+                    <a class="nav-link active" href="{{ route('wishlist.index') }}"> @lang('Wishlist')</a>
                     <a class="nav-link active" href="{{ route('myaccount.orders') }}"> @lang('My Orders')</a>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active"

@@ -27,7 +27,8 @@ class AdminProductController extends Controller
         $newProduct->setMaker($request->input('maker'));
         $newProduct->setDescription($request->input('description'));
         $newProduct->setPrice($request->input('price'));
-
+        $newProduct->setCategoty($request->input('categoty'));
+        $newProduct->setQuantifyAvailable($request->input('quantifyAvailable'));
         if ($request->hasFile('image')) {
             /**$imageName = $product->getId().".".$request->file('image')->extension();
             Storage::disk('public')->put(
@@ -78,6 +79,8 @@ class AdminProductController extends Controller
         $product->setMaker($request->input('maker'));
         $product->setDescription($request->input('description'));
         $product->setPrice($request->input('price'));
+        $product->setCategoty($request->input('categoty'));
+        $product->setQuantifyAvailable($request->input('quantifyAvailable'));
 
         if ($request->hasFile('image')) {
             /**$imageName = $product->getId().".".$request->file('image')->extension();

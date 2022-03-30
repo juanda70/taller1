@@ -27,10 +27,12 @@ class Product extends Model
     {
         $request->validate([
             "name" => "required|max:255",
+            "categoty" => "required",
             "description" => "required",
             "maker" => "required",
             "price" => "required|numeric|gt:0",
             'image' => 'image',
+            "quantifyAvailable" => "required|numeric|gt:0"
         ]);
     }
 
@@ -90,7 +92,20 @@ class Product extends Model
     public function setPrice($price){
         $this->attributes['price'] = $price;
     }
+    public function getCategoty(){
+        return $this->attributes['categoty'];
+    }
 
+    public function setCategoty($categoty){
+        $this->attributes['categoty'] = $categoty;
+    }
+    public function getQuantifyAvailable(){
+        return $this->attributes['quantifyAvailable'];
+    }
+
+    public function setQuantifyAvailable($quantifyAvailable){
+        $this->attributes['quantifyAvailable'] = $quantifyAvailable;
+    }
     public function getCreatedAt(){
         return $this->attributes['created_at'];
     }
