@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Productbreed;
-use App\Models\breed;
+use App\Models\Breed;
 use Lang;
 class ProductController extends Controller
 {
@@ -17,7 +17,7 @@ class ProductController extends Controller
         $viewData["title"] = Lang::get("Products - Online Store");
         $viewData["subtitle"] =  Lang::get("List of products");
         $viewData["products"] = Product::with('productbreeds')->get();
-        $viewData["breeds"] = breed::get();
+        $viewData["breeds"] = Breed::get();
         return view('product.index')->with("viewData", $viewData);
     }
 
