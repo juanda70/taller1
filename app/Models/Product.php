@@ -136,5 +136,15 @@ class Product extends Model
     public function setProductWhisListId($productWhisList){
         $this->productWhisList_id = $productWhisList;
     }
-
+    public function productbreeds(){
+        return $this->hasMany(Productbreed::class);
+    }
+    public function getProductBreed()
+    {
+        return $this->ProductBreed;
+    }
+    public function setProductBreed($productBreed)
+    {
+        return $this->productBreed = $productBreed;
+    }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="card mb-4">
     <div class="card-header">
-        Edit User
+        @lang('Edit User')
     </div>
     <div class="card-body">
         @if($errors->any())
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Name'):</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="name" value="{{ $viewData['user']->getName() }}" type="text" class="form-control">
                         </div>
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Email:</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Email'):</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="email" value="{{ $viewData['user']->getEmail() }}" type="text" class="form-control">
                         </div>
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Role:</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Role'):</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="role" value="{{ $viewData['user']->getRole() }}" type="text" class="form-control">
                         </div>
@@ -49,7 +49,7 @@
             </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Edit</button>
+    <button type="submit" class="btn btn-primary">@lang('Edit')</button>
     </form>
 </div>
 </div>

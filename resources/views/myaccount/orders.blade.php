@@ -5,7 +5,7 @@
 @forelse ($viewData["orders"] as $order)
 <div class="card mb-4">
     <div class="card-header">
-        Order #{{ $order->getId() }}
+        @lang('Order') #{{ $order->getId() }}
     </div>
     <div class="card-body">
         <b>Date:</b> {{ $order->getCreatedAt() }}<br />
@@ -13,10 +13,10 @@
         <table class="table table-bordered table-striped text-center mt-3">
             <thead>
                 <tr>
-                    <th scope="col">Item ID</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">@lang('Item ID')</th>
+                    <th scope="col">@lang('Product Name')</th>
+                    <th scope="col">@lang('Price')</th>
+                    <th scope="col">@lang('Quantity')</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,7 +39,7 @@
 </div>
 @empty
 <div class="alert alert-danger" role="alert">
-    Seems to be that you have not purchased anything in our store =(.
+    @lang('Seems to be that you have not purchased anything in our store.')
 </div>
 @endforelse
 @endsection

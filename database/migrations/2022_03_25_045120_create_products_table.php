@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('maker');
+            $table->string('categoty');
             $table->text('description');
             $table->string('image');
             $table->integer('price');
+            $table->int('quantifyAvailable');
             $table->timestamps();
         });
     }

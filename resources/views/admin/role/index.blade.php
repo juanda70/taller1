@@ -3,7 +3,7 @@
 @section('content')
 <div class="card mb-4">
     <div class="card-header">
-        Admin Panel - User Edit Seccion
+        @lang('Admin Panel - User Edit Seccion')
     </div>
     <div class="card-body">
         @if($errors->any())
@@ -18,16 +18,16 @@
 
 <div class="card">
     <div class="card-header">
-        Manage Users
+        @lang('Manage Users')
     </div>
     <div class="card-body">
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">@lang('Id')</th>
+                    <th scope="col">@lang('Name')</th>
+                    <th scope="col">@lang('Edit')</th>
+                    <th scope="col">@lang('Delete')</th>
                 </tr>
             </thead>
             <tbody>

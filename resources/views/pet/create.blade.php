@@ -36,7 +36,7 @@
                   </option>
                 @endforeach
               </select>
-              <input type="submit" class="btn btn-primary" value="Send" />
+              <input type="submit" class="btn btn-primary" value=@lang('Send') />
             </form>
             
           </div>

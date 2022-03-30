@@ -26,15 +26,15 @@
                     <a class="nav-link active" href="{{ route('product.index') }}"> @lang('Products')</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
-                    <a class="nav-link active" href="{{ route('login') }}">@lang('message.Login')</a>
-                    <a class="nav-link active" href="{{ route('register') }}">@lang('message.Register')</a>
+                    <a class="nav-link active" href="{{ route('login') }}">@lang('Login')</a>
+                    <a class="nav-link active" href="{{ route('register') }}">@lang('Register')</a>
                     @else
-                    <a class="nav-link active" href="{{ route('pet.index') }}"> @lang('message.Pets')</a>
-                    <a class="nav-link active" href="{{ route('pet.create') }}"> @lang('message.Create pet')</a>
-                    <a class="nav-link active" href="{{ route('myaccount.orders') }}"> @lang('message.My Orders')</a>
+                    <a class="nav-link active" href="{{ route('pet.index') }}"> @lang('Pets')</a>
+                    <a class="nav-link active" href="{{ route('pet.create') }}"> @lang('Create pet')</a>
+                    <a class="nav-link active" href="{{ route('myaccount.orders') }}"> @lang('My Orders')</a>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active"
-                            onclick="document.getElementById('logout').submit();"> @lang('message.Logout')</a>
+                            onclick="document.getElementById('logout').submit();"> @lang('Logout')</a>
                         @csrf
                     </form>
                     @endguest

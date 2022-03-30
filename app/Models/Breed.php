@@ -57,4 +57,15 @@ class Breed extends Model
     {
         return $this->pet = $pet;
     }
+    public function productBreeds(){
+        return $this->hasMany(Productbreed::class);
+    }
+    public function getProductBreed()
+    {
+        return $this->ProductBreed;
+    }
+    public function setProductBreed($productBreed)
+    {
+        return $this->productBreed = $productBreed;
+    }
 }
