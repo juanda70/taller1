@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image');
             $table->integer('price');
-            $table->int('quantifyAvailable');
+            $table->integer('quantifyAvailable');
             $table->timestamps();
         });
     }
