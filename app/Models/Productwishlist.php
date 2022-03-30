@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class productwhislist extends Model
+class Productwishlist extends Model
 {
-    
+    use HasFactory;
     public function getId(){
         return $this->attributes['id'];
     }
@@ -40,22 +40,22 @@ class productwhislist extends Model
     public function setProductId($productId){
         $this->attributes['product_id'] = $productId;
     }
-    public function whislist(){
-        return $this->belongsTo(whislist::class);
+    public function wishList(){
+        return $this->belongsTo(Wishlist::class);
     }
     
-    public function getWhisList(){
+    public function getWishList(){
         return $this->product;
     }
 
-    public function setWhisList($product){
+    public function setWishList($product){
         $this->product = $product;
     }
-    public function getWhisListId(){
-        return $this->attributes['WhisList_id'];
+    public function getWishListId(){
+        return $this->attributes['WishList_id'];
     }
 
-    public function setWhisListId($WhisListId){
-        $this->attributes['WhisList_id'] = $WhisListId;
+    public function setWishListId($WishListId){
+        $this->attributes['WishList_id'] = $WishListId;
     }
 }

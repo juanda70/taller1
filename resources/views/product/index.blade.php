@@ -12,6 +12,7 @@
                 <a href="{{ route('product.show', ['id'=> $product->getId()]) }}"
                     class="btn bg-primary text-white">{{ $product->getName() }}</a>
                 <br>{{ $product->getMaker() }}</br>
+                
             </div>
 
 

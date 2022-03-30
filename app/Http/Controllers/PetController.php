@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pet;
 use App\Models\Breed;
+use Lang;
 class PetController extends Controller
 {
     //
@@ -14,8 +15,8 @@ class PetController extends Controller
     {
         $idUser = auth()->id();
         $viewData = [];
-        $viewData["title"] = "pets - Online Store";
-        $viewData["subtitle"] =  "List of pets";
+        $viewData["title"] = Lang::get("pets - Online Store");
+        $viewData["subtitle"] =  Lang::get("List of pets");
         $viewData["pets"] = Pet::where('user_id', $idUser)->get();
         $viewData["breeds"] = Breed::with('pets')->get();
 
@@ -27,8 +28,8 @@ class PetController extends Controller
         $viewData = [];
         $pet = Pet::findOrFail($id);
         $breed = Breed::findOrFail($pet->getBreedId());
-        $viewData["title"] = $pet->getName()." - Online Store";
-        $viewData["subtitle"] =  $pet->getName()." - pet information";
+        $viewData["title"] = $pet->getName();
+        $viewData["subtitle"] =  $pet->getName().Lang::get(" - pet information");
         $viewData["pet"] = $pet;
         $viewData["breed"] = $breed;
         return view('pet.show')->with("viewData", $viewData);
@@ -36,7 +37,7 @@ class PetController extends Controller
     public function create()
     {
         $viewData = []; //to be sent to the view
-        $viewData["title"] = "Create pet";
+        $viewData["title"] = Lang::get("Create pet");
         $viewData["breeds"] = Breed::all();
         return view('pet.create')->with("viewData",$viewData);
     }
@@ -52,7 +53,7 @@ class PetController extends Controller
         $pet->setBreedId($request->breed_id);
         $pet->setUserId(auth()->id());
         $pet->save();
-        return back()->with("msg",__('message.Item created Successfully'));
+        return back()->with("msg",Lang::get('Item created Successfully'));
 
     }
     public function destroy($id)
@@ -65,8 +66,8 @@ class PetController extends Controller
         $viewData = [];
         $pet = Pet::findOrFail($id);
         $breed = Breed::findOrFail($pet->getBreedId());
-        $viewData["title"] = $pet->getName()." - Online Store";
-        $viewData["subtitle"] =  $pet->getName()." - pet information";
+        $viewData["title"] = $pet->getName();
+        $viewData["subtitle"] =  $pet->getName().Lang::get(" - pet information");
         $viewData["pet"] = $pet;
         $viewData["breeds"] = Breed::with('pets')->get();
         return view('pet.edit')->with("viewData", $viewData);
@@ -81,7 +82,7 @@ class PetController extends Controller
         $pet->setGender($request->gender);
         $pet->setBreedId($request->breed_id);
         $pet->save();
-        return back()->with("msg", __('message.Item Updated Successfully'));
+        return back()->with("msg", Lang::get('Item Updated Successfully'));
 
     }
 }

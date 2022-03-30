@@ -14,13 +14,13 @@
         <h5 class="card-title">
            {{ $viewData["pet"]->getName()}}
         </h5>
-        <p class="card-text">{{__('message.Weight')}}: {{ $viewData["pet"]->getWeight() }}kg</p>
-        <p class="card-text">{{__('message.Datebirth')}}: {{$viewData["pet"]->getDateBirth()}}</p>
-        <p class="card-text">{{__('message.Gender')}}:{{$viewData["pet"]->getGender()}}</p>
-        <p class="card-text">{{__('message.Breed')}}:{{$viewData["breed"]->getName()}}</p>
+        <p class="card-text">@lang('message.Weight'): {{ $viewData["pet"]->getWeight() }}kg</p>
+        <p class="card-text">@lang('message.Datebirth'): {{$viewData["pet"]->getDateBirth()}}</p>
+        <p class="card-text">@lang('message.Gender'):{{$viewData["pet"]->getGender()}}</p>
+        <p class="card-text">@lang('message.Breed'):{{$viewData["breed"]->getName()}}</p>
         <a class="boton" id= "delete" href="{{route('pet.delete',['id'=> $viewData["pet"]->getId()] )}}" target="_self">{{__('message.Delete')}}</a>
         <a class="boton" id= "edit" href="{{route('pet.edit',['id'=> $viewData["pet"]->getId()] )}}" target="_self">{{__('message.Edit')}}</a>
-       
+    
       </div>
       
     </div>

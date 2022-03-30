@@ -1,6 +1,7 @@
 <?php
 
 return [ 
+    "Wishlist" => "Lista de deseos",
     "Male"  => "Masculino",
     "Femenine"  => "Femenino",
     "Delete" => "Eliminar",

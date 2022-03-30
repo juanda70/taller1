@@ -14,10 +14,10 @@
         
       <a href="{{ route('pet.show', ['id'=> $pet->getId()]) }}"
         class="btn bg-primary text-white">{{ $pet->getName()}}</a>
-        <br>{{__('message.Gender')}}: {{ $pet->getGender()}} </br>
+        <br>@lang('Gender'): {{ $pet->getGender()}} </br>
         @foreach ($viewData["breeds"] as $breed)
           @if($breed->getId() == $pet->getBreedId())
-            <p>{{__('message.Breed')}}: {{ $breed->getName()}} </p>
+            <p>@lang('Breed'): {{ $breed->getName()}} </p>
           @endif
         @endforeach    
       </div>
@@ -34,10 +34,10 @@
         
       <a href="{{ route('pet.show', ['id'=> $pet->getId()]) }}"
         class="btn bg-primary text-white">{{ $pet->getName()}}</a>
-        <br>{{__('message.Gender')}}: {{ $pet->getGender()}} </br>
+        <br>@lang('Gender'): {{ $pet->getGender()}} </br>
         @foreach ($viewData["breeds"] as $breed)
           @if($breed->getId() == $pet->getBreedId())
-            <p>{{__('message.Breed')}}: {{ $breed->getName()}} </p>
+            <p>@lang('Breed'): {{ $breed->getName()}} </p>
           @endif
         @endforeach    
       </div>
