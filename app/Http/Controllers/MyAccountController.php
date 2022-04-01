@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Lang;
+
 class MyAccountController extends Controller
 {
     public function orders()

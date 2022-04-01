@@ -17,23 +17,26 @@ class AdminRoleController extends Controller
         return view('admin.role.index')->with("viewData", $viewData);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         User::destroy($id);
         return back();
     }
 
-    public function store(Request $request){
-
+    public function store(Request $request)
+    {
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $viewData = [];
         $viewData["title"] = "Admin Page - Edit User - Online Store";
         $viewData["user"] = User::findOrFail($id);
         return view('admin.role.edit')->with("viewData", $viewData);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         User::validate($request);
         $user = User::findOrFail($id);
         $user->setName($request->input('name'));
@@ -42,5 +45,4 @@ class AdminRoleController extends Controller
         $user->save();
         return redirect()->route('admin.role.index');
     }
-
 }

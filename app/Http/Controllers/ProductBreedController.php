@@ -12,13 +12,13 @@ class ProductBreedController extends Controller
 {
     //
     public function index($id)
-    {   $breed = Breed::find($id);
+    {
+        $breed = Breed::find($id);
         $cont=0;
         $idProducts = array();
         $breedId = $id;
         $productbreeds = Productbreed::where('breed_id', $breedId)->get();
-        foreach ($productbreeds as $productbreeds)
-        {
+        foreach ($productbreeds as $productbreeds) {
             $idProducts[$cont] = $productbreeds->getProductId();
             $cont= $cont+1;
         }

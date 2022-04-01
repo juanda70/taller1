@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Wishlist;
@@ -18,8 +19,7 @@ class WishListController extends Controller
         $idUser = auth()->id();
         $idWishlist = Wishlist::findOrFail($idUser);
         $ProductWishlist = Productwishlist::where('wishlist_id', $idWishlist->getId())->get();
-        foreach ($ProductWishlist as $wishlist)
-        {
+        foreach ($ProductWishlist as $wishlist) {
             $idProducts[$cont] = $wishlist->getProductId();
             $cont= $cont+1;
         }
@@ -36,8 +36,7 @@ class WishListController extends Controller
         $wishlist = new Wishlist();
         $wishlist->setUserId(auth()->id());
         $wishlist->save();
-        return back()->with("msg",Lang::get('Wishlist created Successfully'));
-
+        return back()->with("msg", Lang::get('Wishlist created Successfully'));
     }
     public function save($id)
     {
@@ -48,7 +47,6 @@ class WishListController extends Controller
         $productWishList->setProductId($id);
         $productWishList->save();
         return view('wishlist.save');
-
     }
     public function destroy($id)
     {

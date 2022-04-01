@@ -65,7 +65,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static function validate($request){
+    public static function validate($request)
+    {
         $request->validate([
             'name' => 'required',
             'lastname' => 'required',
@@ -77,107 +78,133 @@ class User extends Authenticatable
         ]);
     }
 
-    public function getId(){
+    public function getId()
+    {
         return $this->attributes['id'];
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->attributes['name'];
     }
 
-    public function setName($name){
+    public function setName($name)
+    {
         $this->attributes['name'] = $name;
     }
 
 
-    public function getLastname(){
+    public function getLastname()
+    {
         return $this->attributes['lastname'];
     }
 
-    public function setLastName($lastname){
+    public function setLastName($lastname)
+    {
         $this->attributes['lastname'] = $lastname;
     }
 
-    public function getBirthday(){
+    public function getBirthday()
+    {
         return $this->attributes['birthday'];
     }
 
-    public function setBirthday($birthday){
+    public function setBirthday($birthday)
+    {
         $this->attributes['birthday'] = $birthday;
     }
 
-    public function getGender(){
+    public function getGender()
+    {
         return $this->attributes['gender'];
     }
 
-    public function setGender($gender){
+    public function setGender($gender)
+    {
         $this->attributes['gender'] = $gender;
     }
 
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->attributes['email'];
     }
 
-    public function setEmail($email){
+    public function setEmail($email)
+    {
         $this->attributes['email'] = $email;
     }
 
-    public function getPassword(){
+    public function getPassword()
+    {
         return $this->attributes['password'];
     }
 
-    public function setPassword($password){
+    public function setPassword($password)
+    {
         $this->attributes['password'] = $password;
     }
 
-    public function getRole(){
+    public function getRole()
+    {
         return $this->attributes['role'];
     }
 
-    public function setRole($role){
+    public function setRole($role)
+    {
         $this->attributes['role'] = $role;
     }
 
-    public function getBalance(){
+    public function getBalance()
+    {
         return $this->attributes['balance'];
     }
 
-    public function setBalance($balance){
+    public function setBalance($balance)
+    {
         $this->attributes['balance'] = $balance;
     }
 
-    public function getCreatedAt(){
+    public function getCreatedAt()
+    {
         return $this->attributes['created_at'];
     }
 
-    public function setCreatedAt($createdAt){
+    public function setCreatedAt($createdAt)
+    {
         $this->attributes['created_at'] = $createdAt;
     }
 
-    public function getUpdatedAt(){
+    public function getUpdatedAt()
+    {
         return $this->attributes['updated_at'];
     }
 
-    public function setUpdatedAt($updatedAt){
+    public function setUpdatedAt($updatedAt)
+    {
         $this->attributes['updated_at'] = $updatedAt;
     }
 
-    public function orders(){
+    public function orders()
+    {
         return $this->hasMany(Order::class);
     }
     
-    public function getOrders(){
+    public function getOrders()
+    {
         return $this->orders;
     }
 
-    public function setOrders($orders){
+    public function setOrders($orders)
+    {
         $this->orders = $orders;
     }
-    public function pets(){
+    public function pets()
+    {
         return $this->hasMany(Pet::class);
     }
     public function getPet()
@@ -188,7 +215,8 @@ class User extends Authenticatable
     {
         return $this->pet = $pet;
     }
-    public function whisList(){
+    public function whisList()
+    {
         return $this->hasOne(Whislist::class);
     }
     public function getwhisList()
@@ -199,5 +227,4 @@ class User extends Authenticatable
     {
         return $this->whisList = $whisList;
     }
-
 }

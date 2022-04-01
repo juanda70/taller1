@@ -17,8 +17,8 @@ class Product extends Model
      * $this->attributes['created_at'] - timestamp - contains the product creation date
      * $this->attributes['updated_at'] - timestamp - contains the product update date
      * $this->items - Item[] - contains the associated items
-     * 
-     * 
+     *
+     *
      * $this->attributes['maker'] - string - contains the product maker
      */
     use HasFactory;
@@ -36,7 +36,8 @@ class Product extends Model
         ]);
     }
 
-    public static function sumPricesByQuantities($products, $productsInSession){
+    public static function sumPricesByQuantities($products, $productsInSession)
+    {
         $total = 0;
         foreach ($products as $product) {
             $total = $total + ($product->getPrice()*$productsInSession[$product->getId()]);
@@ -45,113 +46,142 @@ class Product extends Model
         return $total;
     }
 
-    public function getId(){
+    public function getId()
+    {
         return $this->attributes['id'];
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->attributes['name'];
     }
 
-    public function setName($name){
+    public function setName($name)
+    {
         $this->attributes['name'] = $name;
     }
     
-    public function getMaker(){
+    public function getMaker()
+    {
         return $this->attributes['maker'];
     }
 
-    public function setMaker($maker){
+    public function setMaker($maker)
+    {
         $this->attributes['maker'] = $maker;
     }
 
-    public function getDescription(){
+    public function getDescription()
+    {
         return $this->attributes['description'];
     }
 
-    public function setDescription($description){
+    public function setDescription($description)
+    {
         $this->attributes['description'] = $description;
     }
 
-    public function getImage(){
+    public function getImage()
+    {
         return $this->attributes['image'];
     }
 
-    public function setImage($image){
+    public function setImage($image)
+    {
         $this->attributes['image'] = $image;
     }
 
-    public function getPrice(){
+    public function getPrice()
+    {
         return $this->attributes['price'];
     }
 
-    public function setPrice($price){
+    public function setPrice($price)
+    {
         $this->attributes['price'] = $price;
     }
-    public function getCategoty(){
+    public function getCategoty()
+    {
         return $this->attributes['categoty'];
     }
 
-    public function setCategoty($categoty){
+    public function setCategoty($categoty)
+    {
         $this->attributes['categoty'] = $categoty;
     }
-    public function getQuantifyAvailable(){
+    public function getQuantifyAvailable()
+    {
         return $this->attributes['quantifyAvailable'];
     }
 
-    public function setQuantifyAvailable($quantifyAvailable){
+    public function setQuantifyAvailable($quantifyAvailable)
+    {
         $this->attributes['quantifyAvailable'] = $quantifyAvailable;
     }
-    public function getCreatedAt(){
+    public function getCreatedAt()
+    {
         return $this->attributes['created_at'];
     }
 
-    public function setCreatedAt($createdAt){
+    public function setCreatedAt($createdAt)
+    {
         $this->attributes['created_at'] = $createdAt;
     }
 
-    public function getUpdatedAt(){
+    public function getUpdatedAt()
+    {
         return $this->attributes['updated_at'];
     }
 
-    public function setUpdatedAt($updatedAt){
+    public function setUpdatedAt($updatedAt)
+    {
         $this->attributes['updated_at'] = $updatedAt;
     }
 
-    public function items(){
+    public function items()
+    {
         return $this->hasMany(Item::class);
     }
 
-    public function getItems(){
+    public function getItems()
+    {
         return $this->items;
     }
 
-    public function setItems($items){
+    public function setItems($items)
+    {
         $this->items = $items;
     }
-    public function ProductWhisList(){
+    public function ProductWhisList()
+    {
         return $this->hasMany(Productwhislist::class);
     }
 
-    public function getProductWhisList(){
+    public function getProductWhisList()
+    {
         return $this->productWhisList;
     }
 
-    public function setProductWhisList($productWhisList){
+    public function setProductWhisList($productWhisList)
+    {
         $this->productWhisList = $productWhisList;
     }
-    public function getProductWhisListId(){
+    public function getProductWhisListId()
+    {
         return $this->productWhisList_id;
     }
 
-    public function setProductWhisListId($productWhisList){
+    public function setProductWhisListId($productWhisList)
+    {
         $this->productWhisList_id = $productWhisList;
     }
-    public function productbreeds(){
+    public function productbreeds()
+    {
         return $this->hasMany(Productbreed::class);
     }
     public function getProductBreed()

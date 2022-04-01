@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Productbreed;
 use App\Models\breed;
 use Lang;
+
 class ProductController extends Controller
 {
 

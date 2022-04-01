@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Pet;
 use App\Models\Breed;
 use Lang;
+
 class PetController extends Controller
 {
     //
@@ -39,7 +40,7 @@ class PetController extends Controller
         $viewData = []; //to be sent to the view
         $viewData["title"] = Lang::get("Create pet");
         $viewData["breeds"] = Breed::all();
-        return view('pet.create')->with("viewData",$viewData);
+        return view('pet.create')->with("viewData", $viewData);
     }
 
     public function save(Request $request)
@@ -53,8 +54,7 @@ class PetController extends Controller
         $pet->setBreedId($request->breed_id);
         $pet->setUserId(auth()->id());
         $pet->save();
-        return back()->with("msg",Lang::get('Item created Successfully'));
-
+        return back()->with("msg", Lang::get('Item created Successfully'));
     }
     public function destroy($id)
     {
@@ -72,7 +72,7 @@ class PetController extends Controller
         $viewData["breeds"] = Breed::with('pets')->get();
         return view('pet.edit')->with("viewData", $viewData);
     }
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         Pet::validate($request);
         $pet = Pet::findOrFail($id);
@@ -83,8 +83,5 @@ class PetController extends Controller
         $pet->setBreedId($request->breed_id);
         $pet->save();
         return back()->with("msg", Lang::get('Item Updated Successfully'));
-
     }
 }
-
-
