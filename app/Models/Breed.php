@@ -46,7 +46,8 @@ class Breed extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
-    public function pets(){
+    public function pets()
+    {
         return $this->hasMany(Pet::class);
     }
     public function getPet()
@@ -57,7 +58,8 @@ class Breed extends Model
     {
         return $this->pet = $pet;
     }
-    public function productBreeds(){
+    public function productBreeds()
+    {
         return $this->hasMany(Productbreed::class);
     }
     public function getProductBreed()

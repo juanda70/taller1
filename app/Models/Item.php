@@ -31,83 +31,103 @@ class Item extends Model
         ]);
     }
     
-    public function getId(){
+    public function getId()
+    {
         return $this->attributes['id'];
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
     }
 
-    public function getQuantity(){
+    public function getQuantity()
+    {
         return $this->attributes['quantity'];
     }
 
-    public function setQuantity($quantity){
+    public function setQuantity($quantity)
+    {
         $this->attributes['quantity'] = $quantity;
     }
 
-    public function getPrice(){
+    public function getPrice()
+    {
         return $this->attributes['price'];
     }
 
-    public function setPrice($price){
+    public function setPrice($price)
+    {
         $this->attributes['price'] = $price;
     }
 
-    public function getOrderId(){
+    public function getOrderId()
+    {
         return $this->attributes['order_id'];
     }
 
-    public function setOrderId($orderId){
+    public function setOrderId($orderId)
+    {
         $this->attributes['order_id'] = $orderId;
     }
 
-    public function getProductId(){
+    public function getProductId()
+    {
         return $this->attributes['product_id'];
     }
 
-    public function setProductId($productId){
+    public function setProductId($productId)
+    {
         $this->attributes['product_id'] = $productId;
     }
 
-    public function getCreatedAt(){
+    public function getCreatedAt()
+    {
         return $this->attributes['created_at'];
     }
 
-    public function setCreatedAt($createdAt){
+    public function setCreatedAt($createdAt)
+    {
         $this->attributes['created_at'] = $createdAt;
     }
 
-    public function getUpdatedAt(){
+    public function getUpdatedAt()
+    {
         return $this->attributes['updated_at'];
     }
 
-    public function setUpdatedAt($updatedAt){
+    public function setUpdatedAt($updatedAt)
+    {
         $this->attributes['updated_at'] = $updatedAt;
     }
 
-    public function order(){
+    public function order()
+    {
         return $this->belongsTo(Order::class);
     }
 
-    public function getOrder(){
+    public function getOrder()
+    {
         return $this->order;
     }
 
-    public function setOrder($order){
+    public function setOrder($order)
+    {
         $this->order = $order;
     }
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
     
-    public function getProduct(){
+    public function getProduct()
+    {
         return $this->product;
     }
 
-    public function setProduct($product){
+    public function setProduct($product)
+    {
         $this->product = $product;
     }
 }

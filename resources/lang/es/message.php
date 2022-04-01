@@ -1,6 +1,6 @@
 <?php
 
-return [ 
+return [
     "Wishlist" => "Lista de deseos",
     "Male"  => "Masculino",
     "Femenine"  => "Femenino",

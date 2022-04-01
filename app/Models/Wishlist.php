@@ -10,7 +10,8 @@ class Wishlist extends Model
     use HasFactory;
     protected $fillable = ['user_id'];
 
-    public static function validate($request){
+    public static function validate($request)
+    {
         $request->validate([
             "user_id" => "required|numeric"
         ]);
@@ -24,25 +25,31 @@ class Wishlist extends Model
     {
         $this->attributes['id'] = $id;
     }
-    public function ProductWishList(){
+    public function ProductWishList()
+    {
         return $this->hasMany(Productwishlist::class);
     }
 
-    public function getProductWishList(){
+    public function getProductWishList()
+    {
         return $this->productWishList;
     }
 
-    public function setProductWishList($productWishList){
+    public function setProductWishList($productWishList)
+    {
         $this->productWishList = $productWishList;
     }
-    public function getProductWishListId(){
+    public function getProductWishListId()
+    {
         return $this->productWishList_id;
     }
 
-    public function setProductWishListId($productWishList){
+    public function setProductWishListId($productWishList)
+    {
         $this->productWishList_id = $productWishList;
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
     public function getUserId()

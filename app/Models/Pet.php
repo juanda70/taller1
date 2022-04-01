@@ -22,7 +22,8 @@ class Pet extends Model
     protected $fillable = ['name','weight','dateBirth','gender','breed_id'];
 
 
-    public static function validate($request){
+    public static function validate($request)
+    {
         $request->validate([
             'name' => 'required',
             "weight" => "required|regex:/^\d+(\.\d{1,2})?$/",
@@ -87,7 +88,8 @@ class Pet extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
-    public function breed(){
+    public function breed()
+    {
         return $this->belongsTo(Breed::class);
     }
     public function getBreedId()
@@ -98,7 +100,8 @@ class Pet extends Model
     {
         return $this->breed_id = $breed_id;
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
     public function getUserId()
