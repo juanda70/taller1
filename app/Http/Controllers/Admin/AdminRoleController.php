@@ -42,6 +42,9 @@ class AdminRoleController extends Controller
         $user->setName($request->input('name'));
         $user->setEmail($request->input('email'));
         $user->setRole($request->input('role'));
+        $user->setGender($request->input('gender'));
+        $user->setLastName($request->input('lastname'));
+        $user->setBirthday($request->input('birthday'));
         $user->save();
         return redirect()->route('admin.role.index');
     }
