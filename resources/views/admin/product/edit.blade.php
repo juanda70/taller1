@@ -23,11 +23,12 @@
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang("Name"):</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
-                            <input name="name" value="{{ $viewData['product']->getName() }}" type="text"
-                                class="form-control">
+                            <input name="name" value="{{ $viewData['product']->getName() }}" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Maker'):</label>
@@ -37,6 +38,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Price'):</label>
@@ -60,17 +63,38 @@
                     &nbsp;
                 </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">@lang('Categoty')</label>
-                <textarea class="form-control" name="categoty" rows="3">{{ old('categoty') }}</textarea>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 row">
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Categoty'):</label>
+                        <div class="col-lg-10 col-md-6 col-sm-12">
+                            <input name="categoty" value="{{ $viewData['product']->getCategoty() }}" type="text"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">@lang('Description')</label>
-                <textarea class="form-control" name="description" rows="3">{{ old('description') }}</textarea>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 row">
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('Description'):</label>
+                        <div class="col-lg-10 col-md-6 col-sm-12">
+                            <input name="description" value="{{ $viewData['product']->getDescription() }}" type="text"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">@lang('QuantifyAvailable')</label>
-                <textarea class="form-control" name="quantifyAvailable" rows="3">{{ old('quantifyAvailable') }}</textarea>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 row">
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">@lang('QuantifyAvailable'):</label>
+                        <div class="col-lg-10 col-md-6 col-sm-12">
+                            <input name="quantifyAvailable" value="{{ $viewData['product']->getQuantifyAvailable() }}" type="number"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">@lang('Edit')</button>
         </form>
