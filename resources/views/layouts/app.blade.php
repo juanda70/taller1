@@ -45,7 +45,7 @@
     </nav>
     <header class="masthead bg-primary text-white text-center py-4">
         <div class="container d-flex align-items-center flex-column">
-            <h2>@yield('subtitle', 'A Laravel EAFIT App')</h2>
+            <h2>@yield('subtitle', 'Cat s lovers')</h2>
         </div>
     </header>
     <!-- header -->
