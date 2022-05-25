@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        
+
         $viewData = [];
         $viewData["title"] = Lang::get("Products - Online Store");
         $viewData["subtitle"] =  Lang::get("List of products");

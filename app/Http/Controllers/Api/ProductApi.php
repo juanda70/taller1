@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
@@ -18,4 +19,3 @@ class ProductApi extends Controller
         return new ProductResource(Product::findOrFail($id));
     }
 }
-
